@@ -15,7 +15,8 @@ namespace MasonsCalculator
         static void Main(string[] args)
         {
             string mathType;
-            Console.WriteLine("Welcome to Mason's Calculator v0.2.0. Which of the following function types do you want to perform? Please type in all uppercase.\nARITHMETIC, TRIGONOMETRY, ABSOLUTE VALUES");
+
+            Console.WriteLine("Welcome to Mason's Calculator v0.2.0. Which of the following functions do you want to perform? Please type in all uppercase.\nARITHMETIC, TRIGONOMETRY, ABSOLUTE VALUES");
             mathType = Console.ReadLine();
 
             switch (mathType)
@@ -30,7 +31,7 @@ namespace MasonsCalculator
                     CalculatorAbsolute();
                     break;
                 default:
-                    Console.WriteLine("Invalid function type. Please select from the types given and make sure spelling and casing are accurate. Press any key to terminate the console.");
+                    Console.WriteLine("An invalid function was entered. Please select from the types given and make sure spelling and casing are accurate. Press any key to terminate the console.");
                     break;
             }
         }
@@ -96,7 +97,7 @@ namespace MasonsCalculator
                     Console.WriteLine(Math.Tan(trigNum));
                     break;
                 default:
-                    Console.WriteLine("Invalid function was typed in. Press any key to terminate the console.");
+                    Console.WriteLine("An invalid trigonometric function was typed in. Press any key to terminate the console.");
                     break;
             }
         }
