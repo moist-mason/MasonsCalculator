@@ -1,4 +1,4 @@
-﻿// Mason's Calculator v0.2.2
+﻿// Mason's Calculator v0.2.3
 // Written in Visual Studio 2019 using .NET Core 3.1
 using Microsoft.VisualBasic.CompilerServices;
 using System;
@@ -82,7 +82,7 @@ namespace MasonsCalculator
             Console.WriteLine("Enter a number.");
             trigNum = Convert.ToDouble(Console.ReadLine());
 
-            Console.WriteLine("Enter one of the following trigonometric functions. Please type in all lowercase. \nsin, cos, tan");
+            Console.WriteLine("Enter one of the following trigonometric functions. Please type in all lowercase. \nsin, cos, tan, csc, sec, cot");
             trigFunc = Console.ReadLine();
 
             switch (trigFunc)
@@ -96,8 +96,17 @@ namespace MasonsCalculator
                 case "tan":
                     Console.WriteLine(Math.Tan(trigNum));
                     break;
+                case "csc":
+                    Console.WriteLine(1 / Math.Sin(trigNum));
+                    break;
+                case "sec":
+                    Console.WriteLine(1 / Math.Cos(trigNum));
+                    break;
+                case "cot":
+                    Console.WriteLine(1 / Math.Tan(trigNum));
+                    break;
                 default:
-                    Console.WriteLine("An invalid trigonometric function was typed in. Press any key to terminate the console.");
+                    Console.WriteLine("An invalid trigonometric function was entered. Press any key to terminate the console.");
                     break;
             }
         }
