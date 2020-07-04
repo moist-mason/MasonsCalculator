@@ -1,5 +1,5 @@
-﻿// Mason's Calculator v0.1.0
-// Written in Visual Studio 2019 using .NET Core 
+﻿// Mason's Calculator v0.1.1
+// Written in Visual Studio 2019 using .NET Core 3.1
 using Microsoft.VisualBasic.CompilerServices;
 using System;
 
@@ -9,7 +9,7 @@ namespace MasonsCalculator
     {
         static double num1;
         static double num2;
-        
+
         static void Main(string[] args)
         {
             Console.Write("Enter a number: ");
@@ -27,8 +27,8 @@ namespace MasonsCalculator
         {
             double equation;
 
-            Console.Write("Finally, enter an operator (+ - / *): ");
-            string userOp = Console.ReadLine();
+            Console.Write("Finally, enter an operator (+ - / * % ^): ");
+            string userOp = Convert.ToString(Console.ReadLine());
 
             switch (userOp)
             {
@@ -48,8 +48,16 @@ namespace MasonsCalculator
                     equation = num1 / num2;
                     Console.WriteLine(equation);
                     break;
+                case "%":
+                    equation = num1 % num2;
+                    Console.WriteLine(equation);
+                    break;
+                case "^":
+                    equation = Convert.ToInt32(num1) ^ Convert.ToInt32(num2);
+                    Console.WriteLine(equation);
+                    break;
                 default:
-                    Console.WriteLine("Invalid operator was entered. Equation not calculated.");
+                    Console.WriteLine("An invalid operator was entered. The equation won't be calculated. Press any key to terminate the console.");
                     break;
             }
         }
