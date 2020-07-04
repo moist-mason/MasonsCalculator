@@ -1,4 +1,4 @@
-﻿// Mason's Calculator v0.1.1
+﻿// Mason's Calculator v0.2.0
 // Written in Visual Studio 2019 using .NET Core 3.1
 using Microsoft.VisualBasic.CompilerServices;
 using System;
@@ -7,59 +7,105 @@ namespace MasonsCalculator
 {
     class MasonsCalculator
     {
-        static double num1;
-        static double num2;
+        static double arithNum1;
+        static double arithNum2;
+        static double trigNum;
+        static double absNum;
 
         static void Main(string[] args)
         {
-            Console.Write("Enter a number: ");
-            num1 = Convert.ToDouble(Console.ReadLine());
+            string mathType;
+            Console.WriteLine("Welcome to Mason's Calculator v0.2.0. Which of the following function types do you want to perform? Please type in all uppercase.\nARITHMETIC, TRIGONOMETRY, ABSOLUTE VALUES");
+            mathType = Console.ReadLine();
 
-            Console.Write("Next, enter another number: ");
-            num2 = Convert.ToDouble(Console.ReadLine());
-
-            Operator();
-
-            Console.ReadLine();
+            switch (mathType)
+            {
+                case "ARITHMETIC":
+                    CalculatorArithmetic();
+                    break;
+                case "TRIGONOMETRY":
+                    CalculatorTrigonometry();
+                    break;
+                case "ABSOLUTE VALUES":
+                    CalculatorAbsolute();
+                    break;
+                default:
+                    Console.WriteLine("Invalid function type. Please select from the types given and make sure spelling and casing are accurate. Press any key to terminate the console.");
+                    break;
+            }
         }
 
-        static void Operator()
+        static void CalculatorArithmetic()
         {
-            double equation;
+            string userOp;
 
-            Console.Write("Finally, enter an operator (+ - / * % ^): ");
-            string userOp = Convert.ToString(Console.ReadLine());
+            Console.WriteLine("First, enter a number.");
+            arithNum1 = Convert.ToDouble(Console.ReadLine());
+
+            Console.WriteLine("Next, enter another number.");
+            arithNum2 = Convert.ToDouble(Console.ReadLine());
+
+            Console.WriteLine("Finally, enter one of the following operators:\n+, -, *, /, %, ^");
+            userOp = Convert.ToString(Console.ReadLine());
 
             switch (userOp)
             {
                 case "+":
-                    equation = num1 + num2;
-                    Console.WriteLine(equation);
+                    Console.WriteLine(arithNum1 + arithNum2);
                     break;
-                case "-":
-                    equation = num1 - num2;
-                    Console.WriteLine(equation);
+                case "-":;
+                    Console.WriteLine(arithNum1 - arithNum2);
                     break;
                 case "*":
-                    equation = num1 - num2;
-                    Console.WriteLine(equation);
+                    Console.WriteLine(arithNum1 * arithNum2);
                     break;
                 case "/":
-                    equation = num1 / num2;
-                    Console.WriteLine(equation);
+                    Console.WriteLine(arithNum1 / arithNum2);
                     break;
                 case "%":
-                    equation = num1 % num2;
-                    Console.WriteLine(equation);
+                    Console.WriteLine(arithNum1 % arithNum2);
                     break;
                 case "^":
-                    equation = Convert.ToInt32(num1) ^ Convert.ToInt32(num2);
-                    Console.WriteLine(equation);
+                    Console.WriteLine(Convert.ToInt32(arithNum1) ^ Convert.ToInt32(arithNum2));
                     break;
                 default:
                     Console.WriteLine("An invalid operator was entered. The equation won't be calculated. Press any key to terminate the console.");
                     break;
             }
+        }
+
+        static void CalculatorTrigonometry()
+        {
+            string trigFunc;
+
+            Console.WriteLine("Enter a number.");
+            trigNum = Convert.ToDouble(Console.ReadLine());
+
+            Console.WriteLine("Enter one of the following trigonometric functions. Please type in all lowercase. \nsin, cos, tan");
+            trigFunc = Console.ReadLine();
+
+            switch (trigFunc)
+            {
+                case "sin":
+                    Console.WriteLine(Math.Sin(trigNum));
+                    break;
+                case "cos":
+                    Console.WriteLine(Math.Cos(trigNum));
+                    break;
+                case "tan":
+                    Console.WriteLine(Math.Tan(trigNum));
+                    break;
+                default:
+                    Console.WriteLine("Invalid function was typed in. Press any key to terminate the console.");
+                    break;
+            }
+        }
+
+        static void CalculatorAbsolute()
+        {
+            Console.WriteLine("Enter a number to find its absolute value.");
+            absNum = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine(Math.Abs(absNum));
         }
     }
 }
