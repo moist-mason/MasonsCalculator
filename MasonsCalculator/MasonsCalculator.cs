@@ -1,8 +1,6 @@
-﻿// Mason's Calculator v0.3.0
+﻿// Mason's Calculator v0.3.1
 // Written in Visual Studio 2019 using .NET Core 3.1
-using Microsoft.VisualBasic.CompilerServices;
 using System;
-using System.Transactions;
 
 namespace MasonsCalculator
 {
@@ -12,7 +10,7 @@ namespace MasonsCalculator
         {
             string function;
 
-            Console.WriteLine("Welcome to Mason's Calculator v0.2.0. Which of the following functions do you want to perform? Please type in all uppercase.\nARITHMETIC, TRIGONOMETRY, INVERSE TRIGONOMETRY, ABSOLUTE VALUES\nLOGARITHMS, NATURAL LOGARITHMS, SQUARE ROOTS");
+            Console.WriteLine("Welcome to Mason's Calculator v0.3.1. Which of the following functions do you want to perform? Please type in all uppercase.\nARITHMETIC, TRIGONOMETRY, INVERSE TRIGONOMETRY, ABSOLUTE VALUES\nLOGARITHMS, NATURAL LOGARITHMS, SQUARE ROOTS");
             function = Console.ReadLine();
 
             switch (function)
@@ -85,42 +83,6 @@ namespace MasonsCalculator
             }
         }
 
-        static void CalculatorInverseTrig()
-        {
-            double invTrigNum;
-            string invTrigFunc;
-
-            Console.WriteLine("Enter a number.");
-            invTrigNum = Convert.ToDouble(Console.ReadLine());
-
-            Console.WriteLine("Enter one of the following inverse trigonometric functions. Please type in all lowercase.\narcsin, arccos, arctan, arccsc, arcsec, arccot");
-            invTrigFunc = Console.ReadLine();
-
-            switch (invTrigFunc)
-            {
-                case "arcsin":
-                    Console.WriteLine(Math.Asin(invTrigNum));
-                    break;
-                case "arccos":
-                    Console.WriteLine(Math.Acos(invTrigNum));
-                    break;
-                case "arctan":
-                    Console.WriteLine(Math.Atan(invTrigNum));
-                    break;
-                case "arccsc":
-                    Console.WriteLine(Math.Asin(1 / invTrigNum));
-                    break;
-                case "arcsec":
-                    Console.WriteLine(Math.Acos(1 / invTrigNum));
-                    break;
-                case "arccot":
-                    Console.WriteLine(Math.Atan(1 / invTrigNum));
-                    break;
-                default:
-                    Console.WriteLine("An invalid inverse trigonometric function was entered. Press any key to terminate the console.");
-                    break;
-            }
-        }
         static void CalculatorTrigonometry()
         {
             double trigNum;
@@ -158,6 +120,43 @@ namespace MasonsCalculator
             }
         }
 
+        static void CalculatorInverseTrig()
+        {
+            double invTrigNum;
+            string invTrigFunc;
+
+            Console.WriteLine("Enter a number.");
+            invTrigNum = Convert.ToDouble(Console.ReadLine());
+
+            Console.WriteLine("Enter one of the following inverse trigonometric functions. Please type in all lowercase.\narcsin, arccos, arctan, arccsc, arcsec, arccot");
+            invTrigFunc = Console.ReadLine();
+
+            switch (invTrigFunc)
+            {
+                case "arcsin":
+                    Console.WriteLine(Math.Asin(invTrigNum));
+                    break;
+                case "arccos":
+                    Console.WriteLine(Math.Acos(invTrigNum));
+                    break;
+                case "arctan":
+                    Console.WriteLine(Math.Atan(invTrigNum));
+                    break;
+                case "arccsc":
+                    Console.WriteLine(Math.Asin(1 / invTrigNum));
+                    break;
+                case "arcsec":
+                    Console.WriteLine(Math.Acos(1 / invTrigNum));
+                    break;
+                case "arccot":
+                    Console.WriteLine(Math.Atan(1 / invTrigNum));
+                    break;
+                default:
+                    Console.WriteLine("An invalid inverse trigonometric function was entered. Press any key to terminate the console.");
+                    break;
+            }
+        }
+       
         static void CalculatorAbsolute()
         {
             double absNum;
