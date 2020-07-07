@@ -1,18 +1,20 @@
-﻿// Mason's Calculator v1.0-rc2
+﻿// Mason's Calculator v1.0-rc3
 // Written in Visual Studio 2019 using .NET Core 3.1
 using System;
-using System.Runtime.InteropServices;
 
 namespace MasonsCalculator
 {
     class MasonsCalculator
     {
+        // Set to true once an equation has been successfully calculated, which in turn activates the ResetWhenSuccessful() method.
+        static bool isPrinted = false;
 
-        static void Main(string[] args)
+        // Main() method, used to select which mathematical function the user wants to perform.
+        static void Main()
         {
             string mathFunc;
 
-            Console.WriteLine("Welcome to Mason's Calculator. Type in one of the following functions to perform or type 'Quit' to quit the program.\nArithmetic, Trigonometry, Inverse Trigonometry\nAbsolute Values, Logarithms, Natural Logarithms\nPercentages, Exponents, Square Roots");
+            Console.WriteLine("Welcome to Mason's Calculator. Type in one of the following function categories to perform or type 'Quit' to quit the program.\nArithmetic, Trigonometry, Inverse Trigonometry\nAbsolute Values, Logarithms, Natural Logarithms\nPercentages, Exponents, Square Roots");
             mathFunc = Console.ReadLine();
 
             switch (mathFunc)
@@ -57,11 +59,35 @@ namespace MasonsCalculator
                     Environment.Exit(0);
                     break;
                 default:
-                    Console.WriteLine("An invalid function was entered. Press any key to terminate the console.");
+                    Console.WriteLine("An invalid function category was entered. Press any key to terminate the console.");
                     break;
             }
         }
 
+        // Resets the program once an equation has successfully been calculated. Called in every function method.
+        static void ResetWhenSuccessful()
+        {
+            isPrinted = true;
+            string resetWord;
+            
+            if (isPrinted == true)
+            {
+                Console.WriteLine("The equation was successfully calculated. Type 'Reset' to restart the program.");
+                resetWord = Console.ReadLine();
+
+                if (resetWord == "Reset")
+                {
+                    Console.Clear();
+                    Main();
+                }
+                else 
+                {
+                    Console.WriteLine("Input not regonized. Press any key to terminate the console.");
+                }
+            }
+        }
+
+        // The arithmetic set of functions (addition, subtraction, multiplication, division, and modular).
         static void CalculatorArithmetic()
         {
             double arithNum1;
@@ -73,7 +99,7 @@ namespace MasonsCalculator
 
             Console.WriteLine("Next, enter another number.");
             arithNum2 = Convert.ToDouble(Console.ReadLine());
-
+            
             Console.WriteLine("Finally, enter one of the following operators:\n+, -, *, /, %, ^");
             arithOp = Convert.ToString(Console.ReadLine());
 
@@ -81,18 +107,23 @@ namespace MasonsCalculator
             {
                 case "+":
                     Console.WriteLine(arithNum1 + arithNum2);
+                    ResetWhenSuccessful();
                     break;
                 case "-":
                     Console.WriteLine(arithNum1 - arithNum2);
+                    ResetWhenSuccessful();
                     break;
                 case "*":
                     Console.WriteLine(arithNum1 * arithNum2);
+                    ResetWhenSuccessful();
                     break;
                 case "/":
                     Console.WriteLine(arithNum1 / arithNum2);
+                    ResetWhenSuccessful();
                     break;
                 case "%":
                     Console.WriteLine(arithNum1 % arithNum2);
+                    ResetWhenSuccessful();
                     break;
                 default:
                     Console.WriteLine("An invalid operator was entered. Press any key to terminate the console.");
@@ -100,6 +131,7 @@ namespace MasonsCalculator
             }
         }
 
+        // The trigonometric set of functions (sine, cosine, tangent, cosecant, secant, and cotangent).
         static void CalculatorTrigonometry()
         {
             double trigNum;
@@ -115,21 +147,27 @@ namespace MasonsCalculator
             {
                 case "sin":
                     Console.WriteLine(Math.Sin(trigNum));
+                    ResetWhenSuccessful();
                     break;
                 case "cos":
                     Console.WriteLine(Math.Cos(trigNum));
+                    ResetWhenSuccessful();
                     break;
                 case "tan":
                     Console.WriteLine(Math.Tan(trigNum));
+                    ResetWhenSuccessful();
                     break;
                 case "csc":
                     Console.WriteLine(1 / Math.Sin(trigNum));
+                    ResetWhenSuccessful();
                     break;
                 case "sec":
                     Console.WriteLine(1 / Math.Cos(trigNum));
+                    ResetWhenSuccessful();
                     break;
                 case "cot":
                     Console.WriteLine(1 / Math.Tan(trigNum));
+                    ResetWhenSuccessful();
                     break;
                 default:
                     Console.WriteLine("An invalid trigonometric function was entered. Press any key to terminate the console.");
@@ -137,6 +175,7 @@ namespace MasonsCalculator
             }
         }
 
+        // The inverse trigonometric set of functions (arcsine, arccosine, arctangent, arccosecant, arcsecant, and arccotangent).
         static void CalculatorInverseTrig()
         {
             double invTrigNum;
@@ -152,21 +191,27 @@ namespace MasonsCalculator
             {
                 case "arcsin":
                     Console.WriteLine(Math.Asin(invTrigNum));
+                    ResetWhenSuccessful();
                     break;
                 case "arccos":
                     Console.WriteLine(Math.Acos(invTrigNum));
+                    ResetWhenSuccessful();
                     break;
                 case "arctan":
                     Console.WriteLine(Math.Atan(invTrigNum));
+                    ResetWhenSuccessful();
                     break;
                 case "arccsc":
                     Console.WriteLine(Math.Asin(1 / invTrigNum));
+                    ResetWhenSuccessful();
                     break;
                 case "arcsec":
                     Console.WriteLine(Math.Acos(1 / invTrigNum));
+                    ResetWhenSuccessful();
                     break;
                 case "arccot":
                     Console.WriteLine(Math.Atan(1 / invTrigNum));
+                    ResetWhenSuccessful();
                     break;
                 default:
                     Console.WriteLine("An invalid inverse trigonometric function was entered. Press any key to terminate the console.");
@@ -174,6 +219,7 @@ namespace MasonsCalculator
             }
         }
 
+        // The absolute value function.
         static void CalculatorAbsolute()
         {
             double absNum;
@@ -181,8 +227,11 @@ namespace MasonsCalculator
             Console.WriteLine("Enter a number to find its absolute value.");
             absNum = Convert.ToDouble(Console.ReadLine());
             Console.WriteLine(Math.Abs(absNum));
+
+            ResetWhenSuccessful();
         }
 
+        // The logarithm function (base 10).
         static void CalculatorLogarithms()
         {
             double logNum;
@@ -190,8 +239,11 @@ namespace MasonsCalculator
             Console.WriteLine("Enter a number to find its logarithm.");
             logNum = Convert.ToDouble(Console.ReadLine());
             Console.WriteLine(Math.Log10(logNum));
+
+            ResetWhenSuccessful();
         }
 
+        // The natural logarithm / ln function.
         static void CalculatorNaturalLogs()
         {
             double naturalLogNum;
@@ -199,17 +251,23 @@ namespace MasonsCalculator
             Console.WriteLine("Enter a number to find its natural logarithm.");
             naturalLogNum = Convert.ToDouble(Console.ReadLine());
             Console.WriteLine(Math.Log(naturalLogNum));
+
+            ResetWhenSuccessful();
         }
 
+        // The percentage function (converts a number into a percentage decimal form). 
         static void CalculatorPercentages()
         {
             int perNum;
 
-            Console.WriteLine("Enter the percentage.");
+            Console.WriteLine("Enter a number to find its percentage decimal form.");
             perNum = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine(perNum / 100);
+
+            ResetWhenSuccessful();
         }
 
+        // The exponent function.
         static void CalculatorExponents()
         {
             int baseNum;
@@ -220,8 +278,11 @@ namespace MasonsCalculator
             Console.WriteLine("Enter your power number.");
             powNum = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine(baseNum ^ powNum);
+
+            ResetWhenSuccessful();
         }
        
+        // The square root function.
         static void CalculatorSquareRoots()
         {
             double sqrtNum;
@@ -229,6 +290,8 @@ namespace MasonsCalculator
             Console.WriteLine("Enter a number to find its square root.");
             sqrtNum = Convert.ToDouble(Console.ReadLine());
             Console.WriteLine(Math.Sqrt(sqrtNum));
+
+            ResetWhenSuccessful();
         }
     }
 }
