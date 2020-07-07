@@ -1,6 +1,7 @@
-﻿// Mason's Calculator v1.0-rc1
+﻿// Mason's Calculator v1.0-rc2
 // Written in Visual Studio 2019 using .NET Core 3.1
 using System;
+using System.Runtime.InteropServices;
 
 namespace MasonsCalculator
 {
@@ -11,33 +12,45 @@ namespace MasonsCalculator
         {
             string mathFunc;
 
-            Console.WriteLine("Welcome to Mason's Calculator RC1. Type in one of the following functions to perform or type 'Quit' to quit the program.\nArithmetic, Trigonometry, Inverse Trigonometry, Absolute Values, Logarithms, Natural Logarithms, Exponents, Square Roots");
+            Console.WriteLine("Welcome to Mason's Calculator. Type in one of the following functions to perform or type 'Quit' to quit the program.\nArithmetic, Trigonometry, Inverse Trigonometry\nAbsolute Values, Logarithms, Natural Logarithms\nPercentages, Exponents, Square Roots");
             mathFunc = Console.ReadLine();
 
             switch (mathFunc)
             {
                 case "Arithmetic":
+                    Console.Clear();
                     CalculatorArithmetic();
                     break;
                 case "Trigonometry":
+                    Console.Clear();
                     CalculatorTrigonometry();
                     break;
                 case "Inverse Trigonometry":
+                    Console.Clear();
                     CalculatorInverseTrig();
                     break;
                 case "AbsoluteValues":
+                    Console.Clear();
                     CalculatorAbsolute();
                     break;
                 case "Logarithms":
+                    Console.Clear();
                     CalculatorLogarithms();
                     break;
                 case "Natural Logarithms":
+                    Console.Clear();
                     CalculatorNaturalLogs();
                     break;
+                case "Percentages":
+                    Console.Clear();
+                    CalculatorPercentages();
+                    break;
                 case "Exponents":
+                    Console.Clear();
                     CalculatorExponents();
                     break;
                 case "Square Roots":
+                    Console.Clear();
                     CalculatorSquareRoots();
                     break;
                 case "Quit":
@@ -186,6 +199,15 @@ namespace MasonsCalculator
             Console.WriteLine("Enter a number to find its natural logarithm.");
             naturalLogNum = Convert.ToDouble(Console.ReadLine());
             Console.WriteLine(Math.Log(naturalLogNum));
+        }
+
+        static void CalculatorPercentages()
+        {
+            int perNum;
+
+            Console.WriteLine("Enter the percentage.");
+            perNum = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine(perNum / 100);
         }
 
         static void CalculatorExponents()
