@@ -17,6 +17,6 @@ LIST OF FUNCTIONS (AND WHAT YOU CAN DO WITH THEM)
 - Absolute Value: You can find the absolute value of a number
 - Logarithms: You can find the logarithm (base 10) of a number
 - Natural Logarithms: You can find the natural logarithm (base e) of a number
-- Percentages: You can find the percentage form of a number (divides the number by 100)
+- Percentages: You can find the percentage decimal form of a number (divides the number by 100)
 - Exponents: You can take one number to the power of a second number
 - Square Roots: You can take the square root of a number
