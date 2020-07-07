@@ -2,13 +2,14 @@
 Written by moist-mason (github.com/moist-mason)
 Source code at github.com/moist-mason/MasonsCalculor
 
-CURRENT VERSION: v1.0.0-rc2
+CURRENT VERSION: v1.0.0-rc3
 
 INSTRUCTIONS & INFO
 - Upon start up you are asked to select one of 9 different functions. Typing that function in will allow you to do it.
 - For ANY text in which you write letters, BE CASE SENSITIVE. Write EXACTLY as it is shown on the console.
 - Write numbers and operators exactly as shown. 
 - All functions, EXCEPT for Percentages, use doubles, meaning both decimals and integers work.
+- As of RC3, when you enter anything other than a number when it tells you to enter a number, the program will crash. I will try to fix this, hopefully.
 
 LIST OF FUNCTIONS (AND WHAT YOU CAN DO WITH THEM)
 - Arithmetic: You can add 2 numbers, subtract 2 numbers, multiply 2 numbers, divide 2 numbers, or find the remainder of the division of 2 numbers
