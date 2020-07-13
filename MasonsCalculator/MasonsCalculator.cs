@@ -52,7 +52,7 @@ namespace MasonsCalculator
                     Console.Clear();
                     CalculatorExponents();
                     break;
-                case "Square roots":
+                case "Square Roots":
                     Console.Clear();
                     CalculatorSquareRoots();
                     break;

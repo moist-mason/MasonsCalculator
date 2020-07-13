@@ -2,7 +2,7 @@
 Written by moist-mason (github.com/moist-mason)
 Source code at github.com/moist-mason/MasonsCalculor
 
-CURRENT VERSION: v1.0
+CURRENT VERSION: v1.0.1
 
 INSTRUCTIONS & INFO
 - Upon start up you are asked to select one of 9 different function categories. Typing that function in will allow you to do it.
