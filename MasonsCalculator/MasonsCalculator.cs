@@ -1,4 +1,4 @@
-﻿// Mason's Calculator v1.0.1
+﻿// Mason's Calculator 1.0.1
 // Written in Visual Studio 2019 using .NET Core 3.1
 using System;
 
