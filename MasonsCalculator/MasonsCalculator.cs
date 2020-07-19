@@ -1,5 +1,5 @@
-﻿// Mason's Calculator 1.0.1
-// Written in Visual Studio 2019 using .NET Core 3.1
+﻿// Mason's Calculator 1.1 Pre-Release 1
+// Written in Visual Studio 2019 using .NET 5.0 Preview 6
 using System;
 
 namespace MasonsCalculator
