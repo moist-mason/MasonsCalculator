@@ -1,4 +1,4 @@
-﻿// Mason's Calculator 1.1 Build 01
+﻿// Mason's Calculator 1.1 Build 02
 // Written in Visual Studio 2019 using .NET 5.0 Preview 6
 using System;
 
@@ -6,19 +6,20 @@ namespace MasonsCalculator
 {
     class MasonsCalculator
     {
-        static bool isPrinted = false;
-        static bool errorOccurred = false;
         static string restartWord;
+        static double num1;
+        static double num2;
+        static string function;
 
         // Main() method, used to select which mathematical function the user wants to perform.
         static void Main()
         {
-            string mathFunc;
+            string category;
 
             Console.WriteLine("Welcome to Mason's Calculator. Type in one of the following function categories to perform.\nType 'Exit' to exit the program.\n \nArithmetic, Trigonometry, Inverse Trigonometry\nAbsolute Values, Logarithms, Natural Logarithms\nPercentages, Exponents, Square Roots");
-            mathFunc = Console.ReadLine();
+            category = Console.ReadLine();
 
-            switch (mathFunc)
+            switch (category)
             {
                 case "Arithmetic":
                     Console.Clear();
@@ -68,7 +69,7 @@ namespace MasonsCalculator
         // Resets the program once an equation has successfully been calculated. Called in every function method.
         static void RestartWhenSuccessful()
         {
-            isPrinted = true;
+            bool isPrinted = true;
 
             if (isPrinted == true)
             {
@@ -90,7 +91,7 @@ namespace MasonsCalculator
         // Restarts the program after an error has occured.
         static void RestartAfterError()
         {
-            errorOccurred = true;
+            bool errorOccurred = true;
 
             if (errorOccurred == true)
             {
@@ -114,39 +115,37 @@ namespace MasonsCalculator
         {
             try
             {
-                double arithNum1;
-                double arithNum2;
-                string arithOp;
+                char arithOp;
 
                 Console.WriteLine("First, enter a number.");
-                arithNum1 = Convert.ToDouble(Console.ReadLine());
+                num1 = Convert.ToDouble(Console.ReadLine());
 
                 Console.WriteLine("Next, enter another number.");
-                arithNum2 = Convert.ToDouble(Console.ReadLine());
+                num2 = Convert.ToDouble(Console.ReadLine());
 
                 Console.WriteLine("Finally, enter one of the following operators:\n+, -, *, /, %, ^");
-                arithOp = Convert.ToString(Console.ReadLine());
+                arithOp = Convert.ToChar(Console.ReadLine());
 
                 switch (arithOp)
                 {
-                    case "+":
-                        Console.WriteLine(arithNum1 + arithNum2);
+                    case '+':
+                        Console.WriteLine(num1 + num2);
                         RestartWhenSuccessful();
                         break;
-                    case "-":
-                        Console.WriteLine(arithNum1 - arithNum2);
+                    case '-':
+                        Console.WriteLine(num1 - num2);
                         RestartWhenSuccessful();
                         break;
-                    case "*":
-                        Console.WriteLine(arithNum1 * arithNum2);
+                    case '*':
+                        Console.WriteLine(num1 * num2);
                         RestartWhenSuccessful();
                         break;
-                    case "/":
-                        Console.WriteLine(arithNum1 / arithNum2);
+                    case '/':
+                        Console.WriteLine(num1 / num2);
                         RestartWhenSuccessful();
                         break;
-                    case "%":
-                        Console.WriteLine(arithNum1 % arithNum2);
+                    case '%':
+                        Console.WriteLine(num1 % num2);
                         RestartWhenSuccessful();
                         break;
                     default:
@@ -172,39 +171,36 @@ namespace MasonsCalculator
         {
             try
             {
-                double trigNum;
-                string trigFunc;
-
                 Console.WriteLine("Enter a number.");
-                trigNum = Convert.ToDouble(Console.ReadLine());
+                num1 = Convert.ToDouble(Console.ReadLine());
 
                 Console.WriteLine("Enter one of the following trigonometric functions. Please type in all lowercase. \nsin, cos, tan, csc, sec, cot");
-                trigFunc = Console.ReadLine();
+                function = Console.ReadLine();
 
-                switch (trigFunc)
+                switch (function)
                 {
                     case "sin":
-                        Console.WriteLine(Math.Sin(trigNum));
+                        Console.WriteLine(Math.Sin(num1));
                         RestartWhenSuccessful();
                         break;
                     case "cos":
-                        Console.WriteLine(Math.Cos(trigNum));
+                        Console.WriteLine(Math.Cos(num1));
                         RestartWhenSuccessful();
                         break;
                     case "tan":
-                        Console.WriteLine(Math.Tan(trigNum));
+                        Console.WriteLine(Math.Tan(num1));
                         RestartWhenSuccessful();
                         break;
                     case "csc":
-                        Console.WriteLine(1 / Math.Sin(trigNum));
+                        Console.WriteLine(1 / Math.Sin(num1));
                         RestartWhenSuccessful();
                         break;
                     case "sec":
-                        Console.WriteLine(1 / Math.Cos(trigNum));
+                        Console.WriteLine(1 / Math.Cos(num1));
                         RestartWhenSuccessful();
                         break;
                     case "cot":
-                        Console.WriteLine(1 / Math.Tan(trigNum));
+                        Console.WriteLine(1 / Math.Tan(num1));
                         RestartWhenSuccessful();
                         break;
                     default:
@@ -225,39 +221,37 @@ namespace MasonsCalculator
         {
             try
             {
-                double invTrigNum;
-                string invTrigFunc;
 
                 Console.WriteLine("Enter a number.");
-                invTrigNum = Convert.ToDouble(Console.ReadLine());
+                num1 = Convert.ToDouble(Console.ReadLine());
 
                 Console.WriteLine("Enter one of the following inverse trigonometric functions. Please type in all lowercase.\narcsin, arccos, arctan, arccsc, arcsec, arccot");
-                invTrigFunc = Console.ReadLine();
+                function = Console.ReadLine();
 
-                switch (invTrigFunc)
+                switch (function)
                 {
                     case "arcsin":
-                        Console.WriteLine(Math.Asin(invTrigNum));
+                        Console.WriteLine(Math.Asin(num1));
                         RestartWhenSuccessful();
                         break;
                     case "arccos":
-                        Console.WriteLine(Math.Acos(invTrigNum));
+                        Console.WriteLine(Math.Acos(num1));
                         RestartWhenSuccessful();
                         break;
                     case "arctan":
-                        Console.WriteLine(Math.Atan(invTrigNum));
+                        Console.WriteLine(Math.Atan(num1));
                         RestartWhenSuccessful();
                         break;
                     case "arccsc":
-                        Console.WriteLine(Math.Asin(1 / invTrigNum));
+                        Console.WriteLine(Math.Asin(1 / num1));
                         RestartWhenSuccessful();
                         break;
                     case "arcsec":
-                        Console.WriteLine(Math.Acos(1 / invTrigNum));
+                        Console.WriteLine(Math.Acos(1 / num1));
                         RestartWhenSuccessful();
                         break;
                     case "arccot":
-                        Console.WriteLine(Math.Atan(1 / invTrigNum));
+                        Console.WriteLine(Math.Atan(1 / num1));
                         RestartWhenSuccessful();
                         break;
                     default:
@@ -278,11 +272,9 @@ namespace MasonsCalculator
         {
             try
             {
-                double absNum;
-
                 Console.WriteLine("Enter a number to find its absolute value.");
-                absNum = Convert.ToDouble(Console.ReadLine());
-                Console.WriteLine(Math.Abs(absNum));
+                num1 = Convert.ToDouble(Console.ReadLine());
+                Console.WriteLine(Math.Abs(num1));
 
                 RestartWhenSuccessful();
             }
@@ -298,11 +290,9 @@ namespace MasonsCalculator
         {
             try
             {
-                double logNum;
-
                 Console.WriteLine("Enter a number.");
-                logNum = Convert.ToDouble(Console.ReadLine());
-                Console.WriteLine(Math.Log10(logNum));
+                num1 = Convert.ToDouble(Console.ReadLine());
+                Console.WriteLine(Math.Log10(num1));
 
                 RestartWhenSuccessful();
             }
@@ -318,11 +308,9 @@ namespace MasonsCalculator
         {
             try
             {
-                double naturalLogNum;
-
                 Console.WriteLine("Enter a number.");
-                naturalLogNum = Convert.ToDouble(Console.ReadLine());
-                Console.WriteLine(Math.Log(naturalLogNum));
+                num1 = Convert.ToDouble(Console.ReadLine());
+                Console.WriteLine(Math.Log(num1));
 
                 RestartWhenSuccessful();
             }
@@ -338,11 +326,9 @@ namespace MasonsCalculator
         {
             try
             {
-                double perNum;
-
                 Console.WriteLine("Enter a number.");
-                perNum = Convert.ToDouble(Console.ReadLine());
-                Console.WriteLine(perNum / 100);
+                num1 = Convert.ToDouble(Console.ReadLine());
+                Console.WriteLine(num1 / 100);
 
                 RestartWhenSuccessful();
             }
@@ -358,14 +344,11 @@ namespace MasonsCalculator
         {
             try
             {
-                double baseNum;
-                double exponent;
-
                 Console.WriteLine("Enter a base number.");
-                baseNum = Convert.ToDouble(Console.ReadLine());
+                num1 = Convert.ToDouble(Console.ReadLine());
                 Console.WriteLine("Enter an exponent.");
-                exponent = Convert.ToDouble(Console.ReadLine());
-                Console.WriteLine(Math.Pow(baseNum, exponent));
+                num2 = Convert.ToDouble(Console.ReadLine());
+                Console.WriteLine(Math.Pow(num1, num2));
 
                 RestartWhenSuccessful();
             }
@@ -381,11 +364,9 @@ namespace MasonsCalculator
         {
             try
             {
-                double sqrtNum;
-
                 Console.WriteLine("Enter a number.");
-                sqrtNum = Convert.ToDouble(Console.ReadLine());
-                Console.WriteLine(Math.Sqrt(sqrtNum));
+                num1 = Convert.ToDouble(Console.ReadLine());
+                Console.WriteLine(Math.Sqrt(num1));
 
                 RestartWhenSuccessful();
             }
