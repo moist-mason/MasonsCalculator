@@ -358,14 +358,14 @@ namespace MasonsCalculator
         {
             try
             {
-                int baseNum;
-                int powNum;
+                double baseNum;
+                double exponent;
 
                 Console.WriteLine("Enter a base number.");
-                baseNum = Convert.ToInt32(Console.ReadLine());
+                baseNum = Convert.ToDouble(Console.ReadLine());
                 Console.WriteLine("Enter an exponent.");
-                powNum = Convert.ToInt32(Console.ReadLine());
-                Console.WriteLine(baseNum ^ powNum);
+                exponent = Convert.ToDouble(Console.ReadLine());
+                Console.WriteLine(Math.Pow(baseNum, exponent));
 
                 RestartWhenSuccessful();
             }
