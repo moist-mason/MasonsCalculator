@@ -174,7 +174,7 @@ namespace MasonsCalculator
                 Console.WriteLine("Enter a number.");
                 num1 = Convert.ToDouble(Console.ReadLine());
 
-                Console.WriteLine("Enter one of the following trigonometric functions. Please type in all lowercase. \nsin, cos, tan, csc, sec, cot");
+                Console.WriteLine("Enter one of the following trigonometric functions. Please type in all lowercase.\nsin, cos, tan, csc, sec, cot");
                 function = Console.ReadLine();
 
                 switch (function)
@@ -272,7 +272,7 @@ namespace MasonsCalculator
         {
             try
             {
-                Console.WriteLine("Enter a number to find its absolute value.");
+                Console.WriteLine("Enter a number.");
                 num1 = Convert.ToDouble(Console.ReadLine());
                 Console.WriteLine(Math.Abs(num1));
 
