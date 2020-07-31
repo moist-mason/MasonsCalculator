@@ -1,4 +1,4 @@
-﻿// Mason's Calculator 1.1 Build 02
+﻿// Mason's Calculator 1.1 Build 03
 // Written in Visual Studio 2019 using .NET 5.0 Preview 6
 using System;
 
@@ -16,48 +16,48 @@ namespace MasonsCalculator
         {
             string category;
 
-            Console.WriteLine("Welcome to Mason's Calculator. Type in one of the following function categories to perform.\nType 'Exit' to exit the program.\n \nArithmetic, Trigonometry, Inverse Trigonometry\nAbsolute Values, Logarithms, Natural Logarithms\nPercentages, Exponents, Square Roots");
+            Console.WriteLine("Welcome to Mason's Calculator. Type in one of the following function categories to perform.\nType 'Exit' to exit the program.\n \nArithmetic, Trigonometry, Inverse Trigonometry\nAbsolute Values, Logarithms, Natural Logarithms\nPercentages, Exponents, Roots");
             category = Console.ReadLine();
 
-            switch (category)
+            switch (category.ToLower())
             {
-                case "Arithmetic":
+                case "arithmetic":
                     Console.Clear();
                     CalculatorArithmetic();
                     break;
-                case "Trigonometry":
+                case "trigonometry":
                     Console.Clear();
                     CalculatorTrigonometry();
                     break;
-                case "Inverse Trigonometry":
+                case "inverse trigonometry":
                     Console.Clear();
                     CalculatorInverseTrig();
                     break;
-                case "Absolute Values":
+                case "absolute values":
                     Console.Clear();
                     CalculatorAbsolute();
                     break;
-                case "Logarithms":
+                case "logarithms":
                     Console.Clear();
                     CalculatorLogarithms();
                     break;
-                case "Natural Logarithms":
+                case "natural logarithms":
                     Console.Clear();
                     CalculatorNaturalLogs();
                     break;
-                case "Percentages":
+                case "percentages":
                     Console.Clear();
                     CalculatorPercentages();
                     break;
-                case "Exponents":
+                case "exponents":
                     Console.Clear();
                     CalculatorExponents();
                     break;
-                case "Square Roots":
+                case "roots":
                     Console.Clear();
-                    CalculatorSquareRoots();
+                    CalculatorRoots();
                     break;
-                case "Exit":
+                case "exit":
                     Environment.Exit(0);
                     break;
                 default:
@@ -76,7 +76,7 @@ namespace MasonsCalculator
                 Console.WriteLine("The function was successfully performed. Type 'restart' to restart the program.");
                 restartWord = Console.ReadLine();
 
-                if (restartWord == "restart")
+                if (restartWord.ToLower() == "restart")
                 {
                     Console.Clear();
                     Main();
@@ -98,7 +98,7 @@ namespace MasonsCalculator
                 Console.WriteLine("Type 'restart' to restart the program.");
                 restartWord = Console.ReadLine();
 
-                if (restartWord == "restart")
+                if (restartWord.ToLower() == "restart")
                 {
                     Console.Clear();
                     Main();
@@ -174,10 +174,10 @@ namespace MasonsCalculator
                 Console.WriteLine("Enter a number.");
                 num1 = Convert.ToDouble(Console.ReadLine());
 
-                Console.WriteLine("Enter one of the following trigonometric functions. Please type in all lowercase.\nsin, cos, tan, csc, sec, cot");
+                Console.WriteLine("Enter one of the following trigonometric functions.\nsin, cos, tan, csc, sec, cot");
                 function = Console.ReadLine();
 
-                switch (function)
+                switch (function.ToLower())
                 {
                     case "sin":
                         Console.WriteLine(Math.Sin(num1));
@@ -225,10 +225,10 @@ namespace MasonsCalculator
                 Console.WriteLine("Enter a number.");
                 num1 = Convert.ToDouble(Console.ReadLine());
 
-                Console.WriteLine("Enter one of the following inverse trigonometric functions. Please type in all lowercase.\narcsin, arccos, arctan, arccsc, arcsec, arccot");
+                Console.WriteLine("Enter one of the following inverse trigonometric functions.\narcsin, arccos, arctan, arccsc, arcsec, arccot");
                 function = Console.ReadLine();
 
-                switch (function)
+                switch (function.ToLower())
                 {
                     case "arcsin":
                         Console.WriteLine(Math.Asin(num1));
@@ -359,14 +359,17 @@ namespace MasonsCalculator
             }
         }
 
-        // The square root function.
-        static void CalculatorSquareRoots()
+        // The root function. 
+        static void CalculatorRoots()
         {
             try
             {
-                Console.WriteLine("Enter a number.");
+                Console.WriteLine("Enter a base number");
                 num1 = Convert.ToDouble(Console.ReadLine());
-                Console.WriteLine(Math.Sqrt(num1));
+                Console.WriteLine("Enter a root number");
+                num2 = Convert.ToDouble(Console.ReadLine());
+                double root = 1 / num2;
+                Console.WriteLine(Math.Pow(num1, root));
 
                 RestartWhenSuccessful();
             }

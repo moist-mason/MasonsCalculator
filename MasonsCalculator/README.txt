@@ -2,11 +2,10 @@
 Written by moist-mason (github.com/moist-mason)
 Source code at github.com/moist-mason/MasonsCalculor
 
-CURRENT VERSION: 1.1 Build 02
+CURRENT VERSION: 1.1 Build 03
 
 INSTRUCTIONS & INFO
-- Upon start up you are asked to select one of 9 different function categories. Typing that function in will allow you to do it.
-- Type everything (words, numbers, and operators) exactly as shown. Words are case sensitive. (If it shows "Arithmetic", type "Arithmetic")
+- Upon start up you are asked to select one of 9 different function categories. Typing that function in will allow you to do it. The program will guide you from there.
 - All functions use doubles, meaning both decimals and integers can be entered.
 
 LIST OF FUNCTIONS (AND WHAT YOU CAN DO WITH THEM)
@@ -18,4 +17,4 @@ LIST OF FUNCTIONS (AND WHAT YOU CAN DO WITH THEM)
 - Natural Logarithms: You can find the natural logarithm (base e) of a number
 - Percentages: You can find the percentage decimal form of a number (divides the number by 100)
 - Exponents: You can take one number to the power of a second number
-- Square Roots: You can take the square root of a number
+- Roots: take the nth root of one number of a second number
