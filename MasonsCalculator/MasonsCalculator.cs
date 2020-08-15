@@ -79,6 +79,7 @@ namespace MasonsCalculator
                 if (restartWord.ToLower() == "restart")
                 {
                     Console.Clear();
+
                     Main();
                 }
                 else
@@ -101,6 +102,7 @@ namespace MasonsCalculator
                 if (restartWord.ToLower() == "restart")
                 {
                     Console.Clear();
+
                     Main();
                 }
                 else
@@ -157,11 +159,13 @@ namespace MasonsCalculator
             catch (DivideByZeroException e)
             {
                 Console.WriteLine(e.Message);
+
                 RestartAfterError();
             }
             catch (FormatException e)
             {
                 Console.WriteLine(e.Message);
+
                 RestartAfterError();
             }
         }
@@ -212,6 +216,7 @@ namespace MasonsCalculator
             catch (FormatException e)
             {
                 Console.WriteLine(e.Message);
+
                 RestartAfterError();
             }
         }
@@ -263,6 +268,7 @@ namespace MasonsCalculator
             catch (FormatException e)
             {
                 Console.WriteLine(e.Message);
+
                 RestartAfterError();
             }
         }
@@ -274,6 +280,7 @@ namespace MasonsCalculator
             {
                 Console.WriteLine("Enter a number.");
                 num1 = Convert.ToDouble(Console.ReadLine());
+
                 Console.WriteLine(Math.Abs(num1));
 
                 RestartWhenSuccessful();
@@ -281,6 +288,7 @@ namespace MasonsCalculator
             catch (FormatException e)
             {
                 Console.WriteLine(e.Message);
+
                 RestartAfterError();
             }
         }
@@ -292,6 +300,7 @@ namespace MasonsCalculator
             {
                 Console.WriteLine("Enter a number.");
                 num1 = Convert.ToDouble(Console.ReadLine());
+
                 Console.WriteLine(Math.Log10(num1));
 
                 RestartWhenSuccessful();
@@ -299,6 +308,7 @@ namespace MasonsCalculator
             catch (FormatException e)
             {
                 Console.WriteLine(e.Message);
+
                 RestartAfterError();
             }
         }
@@ -310,6 +320,7 @@ namespace MasonsCalculator
             {
                 Console.WriteLine("Enter a number.");
                 num1 = Convert.ToDouble(Console.ReadLine());
+
                 Console.WriteLine(Math.Log(num1));
 
                 RestartWhenSuccessful();
@@ -317,6 +328,7 @@ namespace MasonsCalculator
             catch (FormatException e)
             {
                 Console.WriteLine(e.Message);
+
                 RestartAfterError();
             }
         }
@@ -328,6 +340,7 @@ namespace MasonsCalculator
             {
                 Console.WriteLine("Enter a number.");
                 num1 = Convert.ToDouble(Console.ReadLine());
+
                 Console.WriteLine(num1 / 100);
 
                 RestartWhenSuccessful();
@@ -335,6 +348,7 @@ namespace MasonsCalculator
             catch (FormatException e)
             {
                 Console.WriteLine(e.Message);
+
                 RestartAfterError();
             }
         }
@@ -346,8 +360,10 @@ namespace MasonsCalculator
             {
                 Console.WriteLine("Enter a base number.");
                 num1 = Convert.ToDouble(Console.ReadLine());
+
                 Console.WriteLine("Enter an exponent.");
                 num2 = Convert.ToDouble(Console.ReadLine());
+
                 Console.WriteLine(Math.Pow(num1, num2));
 
                 RestartWhenSuccessful();
@@ -355,6 +371,7 @@ namespace MasonsCalculator
             catch (FormatException e)
             {
                 Console.WriteLine(e.Message);
+
                 RestartAfterError();
             }
         }
@@ -366,9 +383,11 @@ namespace MasonsCalculator
             {
                 Console.WriteLine("Enter a base number");
                 num1 = Convert.ToDouble(Console.ReadLine());
+
                 Console.WriteLine("Enter a root number");
                 num2 = Convert.ToDouble(Console.ReadLine());
                 double root = 1 / num2;
+
                 Console.WriteLine(Math.Pow(num1, root));
 
                 RestartWhenSuccessful();
@@ -376,6 +395,7 @@ namespace MasonsCalculator
             catch (FormatException e)
             {
                 Console.WriteLine(e.Message);
+
                 RestartAfterError();
             }
         }
