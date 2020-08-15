@@ -119,13 +119,13 @@ namespace MasonsCalculator
             {
                 char arithOp;
 
-                Console.WriteLine("First, enter a number.");
+                Console.WriteLine("Enter a number.");
                 num1 = Convert.ToDouble(Console.ReadLine());
 
-                Console.WriteLine("Next, enter another number.");
+                Console.WriteLine("Enter a second number.");
                 num2 = Convert.ToDouble(Console.ReadLine());
 
-                Console.WriteLine("Finally, enter one of the following operators:\n+, -, *, /, %, ^");
+                Console.WriteLine("Enter one of the following operators.\n+, -, *, /, %, ^");
                 arithOp = Convert.ToChar(Console.ReadLine());
 
                 switch (arithOp)
@@ -208,7 +208,7 @@ namespace MasonsCalculator
                         RestartWhenSuccessful();
                         break;
                     default:
-                        Console.WriteLine("An invalid trigonometric function was entered.");
+                        Console.WriteLine("An invalid function was entered.");
                         RestartAfterError();
                         break;
                 }
@@ -260,7 +260,7 @@ namespace MasonsCalculator
                         RestartWhenSuccessful();
                         break;
                     default:
-                        Console.WriteLine("An invalid inverse trigonometric function was entered.");
+                        Console.WriteLine("An invalid function was entered.");
                         RestartAfterError();
                         break;
                 }
@@ -381,10 +381,10 @@ namespace MasonsCalculator
         {
             try
             {
-                Console.WriteLine("Enter a base number");
+                Console.WriteLine("Enter a base number.");
                 num1 = Convert.ToDouble(Console.ReadLine());
 
-                Console.WriteLine("Enter a root number");
+                Console.WriteLine("Enter a root number.");
                 num2 = Convert.ToDouble(Console.ReadLine());
                 double root = 1 / num2;
 
